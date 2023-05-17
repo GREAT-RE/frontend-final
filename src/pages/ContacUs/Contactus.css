@@ -42,8 +42,8 @@
   
   .contactButton[type="submit"],
   .contactButton[type="submit"] {
-    background: #3C4464;
-    color: #FCB434;
+    background: #FCB434;
+    color: #3C4464;
     text-transform: uppercase;
     border: none;
     margin-top: 40px;
@@ -54,10 +54,9 @@
     margin-right: 45px;
     margin-left: 45px;
   }
-  
   .contactButton[type="submit"]:hover,
   .contactButton[type="submit"]:hover {
-    background: #363d5a;
+    background: #FCA434;
   }
   
   .contactButton[type="submit"]:active,

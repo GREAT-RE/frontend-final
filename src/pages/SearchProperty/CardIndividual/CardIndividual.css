@@ -34,6 +34,11 @@
   flex-direction: row;
 }
 
+.cardI-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
 .cardI-image {
     width: 700px;
     height: 500px;

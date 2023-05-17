@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import cardI1 from "../../../assets/Popular property.jpg";
 import "./CardIndividual.css";
 import api from "../../../services/api";
 import ListingDetailsMap from "../../../components/MapListingDetails/ListingDetailsMap/ListingDetailsMap";
-import MapListing from "../../../components/MapListingDetails/MapListing";
 import { ChakraProvider, theme } from "@chakra-ui/react";
 import imagePlaceholder from "../../../assets/placeholder-image.png";
 import airConditioner from "../../../assets/amenity-icons/air-conditioner.svg";
@@ -49,6 +47,18 @@ const CardIndividual = () => {
         setAmenities(response.data[0].amenities);
         setSrc(response.data[0].picture_url);
         setSingleProperty(response.data[0]);
+        axios
+          .get(
+            `https://maps.googleapis.com/maps/api/geocode/json?latlng=${response.data[0].lat},${response.data[0].lng}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
+          )
+          .then((results) => {
+            setAddress(results.data.results[0].formatted_address);
+            api
+              .put(`/listing/${response.data[0].id}`, {
+                formatted_address: results.data.results[0].formatted_address,
+              })
+              .then((response) => console.log(response));
+          });
       })
       .catch((error) => {
         console.error(error);

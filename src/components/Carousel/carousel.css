@@ -21,7 +21,9 @@
 }
 .slick-prev:before,
 .slick-next:before {
-color: #3C4464;
+  color: #3C4464;
+  font-size: 50px;
+  opacity: 0.5;
 }
 
 @media (max-width: 800px){
