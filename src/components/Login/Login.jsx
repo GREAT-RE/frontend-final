@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {useNavigate} from "react-router-dom"
 import { useForm } from "react-hook-form";
-import axios from "axios";
 import "./Login.css"
 import api from './../../services/api';
+import AuthContext from "../../context/AuthContext";
 
 const Login = () => {
-    const [user, setUser] = useState({});
+
+    const {setUser} = useContext(AuthContext)
 
     const {
         register,
@@ -20,7 +21,6 @@ const Login = () => {
     api
       .post("/auth/login", data)
       .then((response) => {
-        console.log(response)
         setUser(response.data.user)
         localStorage.setItem("user_token_greater", response.data.token)
         navigate("/")
@@ -57,9 +57,6 @@ const Login = () => {
       <input className='contactButton' type="submit" value="LogIn" />
     </form>
     </div>
-
-    {/* <p>Forgot your <span className="passASK"><Link to="">Password?</Link></span></p> */}
-
   
     </>
   )

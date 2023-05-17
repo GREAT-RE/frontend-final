@@ -1,8 +1,12 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import imagePlaceholder from "../../../assets/placeholder-image.png"
+// import ListingsContext from "../../../context/ListingsContext";
 
 const SideCard = ({ card }) => {
+
+  // const { universitiesSelected, universities } = useContext(ListingsContext);
+
   let tempArray = [
     card.distance_1,
     card.distance_2,
@@ -34,6 +38,24 @@ const SideCard = ({ card }) => {
             </span>{" "}
             /daily
           </p>
+          {/* {universitiesSelected ? (
+            <>
+        
+              {
+                  
+                  universities.filter((university, index) => index+1 === Number(universitiesSelected) ).map(university => (
+                    <>
+                    Selected:
+                    <p className="card-universities-distance" key={university.id}>
+                      <HiLocationMarker />
+                    {university.name} is {(card[`distance_${universitiesSelected}`]).toFixed(2)} km's away
+                    </p>
+                    </>
+                  ))
+              }
+            </>
+          ) : null} */}
+         {/* <br/> */}
           {asArray[0][0] === "distance_1" && (
             <p className="card-universities-distance">
               <HiLocationMarker />

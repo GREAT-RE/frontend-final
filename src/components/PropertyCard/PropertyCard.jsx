@@ -17,9 +17,11 @@ import imagePlaceholder from "../../assets/placeholder-image.png";
 
 import favouriteIcon from "../../assets/favourite.icon.svg";
 
-import imageHeart from "../../assets/heart-full.svg"
+import imageHeart from "../../assets/heart-full.svg";
 
 import AuthContext from "../../context/AuthContext";
+
+import ListingsContext from "../../context/ListingsContext";
 
 import api from "../../services/api";
 
@@ -27,6 +29,8 @@ const PropertyCard = ({ listing, minNumber }) => {
   const [src, setSrc] = useState(listing.picture_url);
 
   const { user, interest, setInterest } = useContext(AuthContext);
+
+  const { universitiesSelected, universities } = useContext(ListingsContext);
 
   const {
     id,
@@ -92,12 +96,7 @@ const PropertyCard = ({ listing, minNumber }) => {
       }
     })
     .filter((amenity) => amenity !== null);
-  // const extraImageArray = amenitiesToDisplay
-  // .filter((amenity) => amenitiesArray.includes(amenity))
-  // .map((amenity) => extraImages[amenity]);
-  // console.log("extraImageArray: ", extraImageArray);
-
-  // console.log(minNumber);
+ 
   const asArray = Object.entries(listing).filter(
     ([key, value]) => value === minNumber
   );
@@ -107,30 +106,36 @@ const PropertyCard = ({ listing, minNumber }) => {
   const [message, setMessage] = useState("");
 
   const addWishList = (listId) => {
-    // console.log(user)
-    if (user && user.id) {
-      let data = {
-        studId: user.id,
-        listId: listId,
-        interest_type: true,
-      };
-      api
-        .post("/interest", data)
-        .then((response) => setMessage(response.data))
-        .catch((error) => {
-          console.error(error);
-        });
+    console.log(user);
+    if (user) {
+      if (user.id) {
+        let data = {
+          studId: user.id,
+          listId: listId,
+          interest_type: true,
+        };
+        api
+          .post("/interest", data)
+          .then((response) => setMessage(response.data))
+          .catch((error) => {
+            console.error(error);
+          });
+      } else navigate("/register/login");
     } else navigate("/register/login");
   };
 
-  useEffect(() =>{
-    api
-    .get(`/interest/${user.id}`)
-    .then((response) => setInterest(response.data))
-    .catch((error) => {
-      console.error(error);
-    });
-  },[message])
+  useEffect(() => {
+    if (user) {
+      if (user.id) {
+        api
+          .get(`/interest/${user.id}`)
+          .then((response) => setInterest(response.data))
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    }
+  }, [message]);
 
   return listing ? (
     <div className="card-listing-all">
@@ -161,6 +166,25 @@ const PropertyCard = ({ listing, minNumber }) => {
           />
         ))}
         <div className="card-universities">
+          {universitiesSelected ? (
+            <>
+        
+              {
+                  
+                  universities.filter((university, index) => index+1 === Number(universitiesSelected) ).map(university => (
+                    <>
+                    Selected:
+                    <p className="card-universities-distance" key={university.id}>
+                      <HiLocationMarker />
+                    {university.name} is {(listing[`distance_${universitiesSelected}`]).toFixed(2)} km's away
+                    </p>
+                    </>
+                  ))
+              }
+            </>
+          ) : null}
+         <br/>
+          More Closed:
           {asArray[0][0] === "distance_1" && (
             <p className="card-universities-distance">
               <HiLocationMarker />
@@ -196,7 +220,6 @@ const PropertyCard = ({ listing, minNumber }) => {
       </div>
       <div className="card-listing-price-rating">
         <button
-          // disabled={!user ? true : false}
           className={
             user ? "card-listing-rating" : "card-listing-rating button-disabled"
           }
@@ -204,12 +227,20 @@ const PropertyCard = ({ listing, minNumber }) => {
         >
           <img
             src={
-              interest.find((item) => item.listId === listing_id)
-                ? imageHeart
+              interest
+                ? interest.find((item) => item.listId === listing_id)
+                  ? imageHeart
+                  : favouriteIcon
                 : favouriteIcon
             }
             alt="favourite-icon"
-            className={ interest.find((item) => item.listId === listing_id) ? "heartFull": "addHeart"}
+            className={
+              interest
+                ? interest.find((item) => item.listId === listing_id)
+                  ? "heartFull"
+                  : "addHeart"
+                : "addHeart"
+            }
           />
         </button>
         <p className="card-listing-text-price">

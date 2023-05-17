@@ -21,7 +21,6 @@ import Properties from "../Properties/Properties";
 import {ListingsContextProvider} from "../../context/ListingsContext"
 import {AuthProvider} from "../../context/AuthContext"
 import SearchListingMap from "../../components/MapListingDetails/SearchListingMap/SearchListingMap";
-import MapListing from "../../components/MapListingDetails/MapListing";
 
 const ContentPage = () => {
   return (

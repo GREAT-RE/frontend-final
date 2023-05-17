@@ -4,7 +4,6 @@ import cardI1 from "../../../assets/Popular property.jpg";
 import "./CardIndividual.css";
 import api from "../../../services/api";
 import ListingDetailsMap from "../../../components/MapListingDetails/ListingDetailsMap/ListingDetailsMap";
-import MapListing from "../../../components/MapListingDetails/MapListing";
 import { ChakraProvider, theme } from "@chakra-ui/react";
 import imagePlaceholder from "../../../assets/placeholder-image.png";
 const CardIndividual = () => {

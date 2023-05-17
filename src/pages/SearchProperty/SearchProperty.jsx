@@ -6,7 +6,6 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
-  Button,
   Slider,
 } from "@mui/material";
 import api from "../../services/api";
@@ -17,10 +16,6 @@ import "react-datepicker/dist/react-datepicker.css";
 import { FaArrowRight } from "react-icons/fa";
 
 const SearchProperty = () => {
-  // const [open, setOpen] = useState(false);
-  // const toggleCheckboxList = () => {
-  //   setOpen(!open);
-  // };
 
   const {
     universities,
@@ -36,7 +31,6 @@ const SearchProperty = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // const [selectedUniversity, setSelectedUniversity] = useState("");
   const [selectRoomType, setSelectRoomType] = useState("");
   const [firstValue, setFirstValue] = useState(20);
   const [secondValue, setSecondValue] = useState(1000);
@@ -47,13 +41,11 @@ const SearchProperty = () => {
     event.preventDefault();
     setFirstValue(newValue[0]);
     setSecondValue(newValue[1]);
-    // console.log(newValue);
   };
 
   const handleUniversityChange = (event) => {
     setUniversitiesSelected(event.target.value);
-    // console.log(event.target.value)
-    // localStorage.setItem("selectedUniversity", event.target.value)
+
     api
       .get(`/listing/universities/${event.target.value}`)
       .then((response) => {
@@ -68,7 +60,6 @@ const SearchProperty = () => {
   };
 
   const handleRoomChange = (event) => {
-    // console.log(event.target.value);
     setSelectRoomType(event.target.value);
     api
       .post(`/listing?room_type=${event.target.value}`)
@@ -84,33 +75,20 @@ const SearchProperty = () => {
   };
 
   let checkedResults = {};
-  // let checkedResults = [];
+
   const handleCheckboxChange = (event) => {
-    // console.log(event.target.checked);
-    // if (event.target.checked) {
+
     Object.assign(checkedResults, {
       [event.target.name]: event.target.checked,
     });
-    // checkedResults.push(event.target.name);
-    // } else {
-    //   const index = checkedResults.indexOf(event.target.name);
-    //   if (index > -1) {
-    //     checkedResults.splice(index, 1);
-    //   }
-    // }
-    // console.log(checkedResults);
-    // console.log(selectedUniversity);
+
     if (universitiesSelected !== "") {
-      // api
-      //   .get(`/listing/universities/${selectedUniversity}`)
-      //   .then((response) => {
-      //     let tempData = response.data;
+
           if (Object.keys(checkedResults).length > 0) {
             api
               .post("/listing", {data:checkedResults, universities:universitiesSelected})
               .then((response) => {
                 setListingsFilter(response.data);
-                // console.log(response.data);
                 if (location.pathname === "/properties/popular") {
                   navigate("/properties/list");
                 }
@@ -125,7 +103,6 @@ const SearchProperty = () => {
             .post("/listing", {data:checkedResults, universities:null})
             .then((response) => {
               setListingsFilter(response.data);
-              // console.log(response.data);
               if (location.pathname === "/properties/popular") {
                 navigate("/properties/list");
               }
@@ -136,81 +113,6 @@ const SearchProperty = () => {
         }
 
         }
-          // if (Object.keys(checkedResults).length > 0) {
-          //   let result=[]
-          //   Object.keys(checkedResults).forEach((key, index)=> {
-          //     if(checkedResults[key]){
-          //       tempData.filter(home => home.amenities.toLowerCase().includes(key.toLowerCase())).map(home =>
-          //         {
-          //           if () {
-          //               Object.assign(checkedResults, {[event.target.name]: event.target.checked});
-          //               checkedResults.push(event.target.name);
-          //             } else {
-          //               const index = checkedResults.indexOf(event.target.name);
-          //               if (index > -1) {
-          //                 checkedResults.splice(index, 1);
-          //               }
-          //             }
-          //         })
-          //     }
-          //   });
-          // console.log(result)
-          // api
-          //   .get(`/listing`, {data:checkedResults})
-          //   .then((response) => {
-          //     console.log(response)
-          //     // tratamento dos dados de ambos os axios
-          //   })
-          //   .catch((error) => {
-          //     console.error(error);
-          //   });
-    //       else {
-    //         console.log("filtrado por distancia a universidade selecionada");
-    //       }
-    //     })
-    //     .catch((error) => {
-    //       console.error(error);
-    //     });
-    // } else {
-      // api
-      //   .get(`/listing?${checkedResults}`)
-      //   .then((response) => {})
-      //   .catch((error) => {
-      //     console.error(error);
-      //   });
-
-    //   if(selectedUniversity !=="")
-    // api
-    // .get(`/listing/universities/${selectedUniversity}`)
-    // .then((response) => if {(checkedResults.length > 0 && handleRoomChange !="") api.get(`/listing?room_type=${handleRoomChange.event.target.value}&&min_price=${newValue[0]}&&max_price=${newValue[1]}`&&amenities=[...checkedValues])
-    // else if (checkedResults.length === 0 && handleRoomChange !=""){api.get(`/listing?room_type=${handleRoomChange.event.target.value}&&min_price=${newValue[0]}&&max_price=${newValue[1]}
-    // else if (checkedResults.length > 0 && handleRoomChange =""){api.get(`/listing?min_price=${newValue[0]}&&max_price=${newValue[1]&&amenities=[...checkedValues]}
-
-    // const search = () => {
-    //   let query = "";
-    //   query += `min_price=${firstValue}&max_price=${secondValue}&`;
-    //   if (selectRoomType !== "") {
-    //     query += `room_type=${selectRoomType}&`;
-    //   }
-    //   if (checkedResults.length > 0) {
-    //     query += `amenities=${checkedResults.join()}&`;
-    //   }
-    //   if (selectedUniversity !== "") {
-    //     api.get(`/listing/universities/${selectedUniversity}?${query}`)
-    //       .then((response) => {
-    //       })
-    //       .catch((error) => {
-    //         console.error(error);
-    //       });
-    //   } else {
-    //     api.get(`/listing?${query}`)
-    //       .then((response) => {
-    //       })
-    //       .catch((error) => {
-    //         console.error(error);
-    //       });
-    //   }
-    // };
   };
 
   return (
@@ -247,15 +149,8 @@ const SearchProperty = () => {
                 <option value="Entire home/apt">Entire Home</option>
                 <option value="Private room">Private Room</option>
               </select>
-              {/* <input
-                type="date"
-                className="moveInMoveOut"
-                min="2018-01-01"
-                max="2024-12-31"
-              /> */}
+            
               <div>
-                {/* <h2 className="filter-title">Date</h2> */}
-                {console.log(startDate)}
                 <div className="calendars-container">
                   <DatePicker
                     selected={startDate}
@@ -287,9 +182,6 @@ const SearchProperty = () => {
                 </div>
               </div>
             </div>
-
-            {/* <Button className="extrasCheckboxButton" onClick={toggleCheckboxList}>Select Extras</Button> */}
-            {/* {open && ( */}
             <FormGroup className="extrasCheckbox">
               <FormControlLabel
                 control={<Checkbox />}
@@ -362,7 +254,6 @@ const SearchProperty = () => {
                 onChange={handleCheckboxChange}
               />
             </FormGroup>
-            {/* )} */}
           </div>
           <Box sx={{ width: 300 }}>
             <Slider

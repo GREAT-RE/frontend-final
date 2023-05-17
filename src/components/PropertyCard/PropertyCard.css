@@ -102,10 +102,9 @@
     margin-top: 50px;
   }
 
-  /* .card-universities-distance::after{
-    content: "\a";
-    white-space: pre;
-  } */
+  .card-universities-distance{
+    margin: 20px auto;
+  }
 
   .card-listing-rating{
     width: 40px;
