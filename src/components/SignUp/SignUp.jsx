@@ -104,7 +104,6 @@ const SignUp = () => {
               className="terms"
               type="checkbox"
               name="privacy_policies"
-              // value={true}
               {...register("privacy_policies", {
                 required: "Privacy and Policies mandatory",
               })}
@@ -133,7 +132,6 @@ const SignUp = () => {
               className="recEmails"
               type="checkbox"
               name="newsletter"
-              // value={false}
               {...register("newsletter")}
             />
             <span className="checkbox-text2">

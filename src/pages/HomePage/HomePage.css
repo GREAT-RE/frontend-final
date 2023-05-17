@@ -14,6 +14,10 @@
   border-radius: 10px;
   margin-top: -40px;
 }
+.logohome {
+  width: 300px;
+  height: 300px;
+}
 
 .logo-container {
   position: absolute;
@@ -29,6 +33,8 @@
 .button-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: #EDEDED;
@@ -36,11 +42,13 @@
   margin-left: 30px;
   border-radius: 10px;
 }
-
 .button-container a {
-  display: inline-block;
-  margin: 0 20px;
-  padding: 10px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 10px;
+  padding: 10px 60px;
   background-color: #fff;
   color: #000;
   text-decoration: none;
@@ -53,28 +61,25 @@
 
 .list-property-button {
   background-color: #ffffff;
-  margin-right: 40px;
-  margin-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 3px solid black;
-
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .more-about-lisbon-button {
   background-color: #EEE5E5;
-  margin-right: 40px;
-  margin-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .offers-promotions-button {
   background-color: #3C4464;
-  margin-right: 40px;
-  margin-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .list-property-button a {
