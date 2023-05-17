@@ -24,7 +24,7 @@ https://github.com/GREAT-RE/frontend.git
 
 2. Navigate to the project directory:
 
-cd homeinlx
+cd frontend
 
 3. Install dependencies: npm install
 
@@ -41,3 +41,5 @@ Search properties - users can search for available properties based on their pre
 List your properties -  property owners can list their properties
 
 Our team is  always open to feedback and suggestions from users, and will continue to work on improving and updating HomeInlx as needed.
+
+You can reach us at homesinlx@gmail.com
