@@ -1,0 +1,88 @@
+.loginLogo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+.logoL {
+    background-size:cover;
+    width: 150px;
+    height: 150px;
+    margin-top: 50px;
+  }
+
+  .fieldset-login {
+    display:grid;
+    margin: 25px;
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    box-shadow: 6px 3px 8px #0000002d;
+  }
+
+  .register-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .login-signin {
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-button {
+    padding: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    color: #3C4464;
+  }
+
+  .signin-button {
+    padding: 10px;
+    padding-left: 80px;
+    padding-right: 80px;
+    color: #3C4464;
+  }
+
+  .login-button:hover {
+    background: #FCA434;
+    transition: 0.3s all;
+    border-top: none;
+    border-radius: 10px;
+  }
+
+  .signin-button:hover {
+    background: #FCA434;
+    transition: 0.3s all;
+    border-radius: 10px;
+  }
+
+  .signin-button.active {
+    border-bottom: black;
+    border-bottom-style:ridge;
+  }
+
+  .login-button.active {
+    border-bottom: black;
+    border-bottom-style:ridge;
+  }
+
+  @media screen and (max-width:768px) {
+    .login-button {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .signin-button {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .logoL {
+      width: 120px;
+      height: 120px;
+    }
+
+  }

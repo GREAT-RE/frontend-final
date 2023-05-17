@@ -1,0 +1,68 @@
+.augusta-all-text {
+    width: 800px;
+}
+
+.ruaAugusta {
+    display:flex;
+    justify-content:center;
+    margin-bottom: 80px;
+}
+
+.rua-augusta-img {
+    margin-top: 60px;
+    width: 800px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.augusta-get {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: rgb(255, 115, 0);
+}
+
+.augusta-title {
+    display: flex;
+    font-size: 42px;
+}
+
+.augusta-text {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.go-back {
+    margin-top: 60px;
+    color: rgb(255, 115, 0);
+}
+
+@media screen and (max-width:768px) {
+    .augusta-all-text {
+        width: auto;
+        justify-items: center;
+        justify-content: center;
+    }
+    .augustaimg {
+        display: flex;
+        justify-content: center;
+    }
+    .augusta-title {
+        font-size: 26px;
+    }
+
+    .augusta-text {
+        font-size: 16px;
+    }
+
+    .rua-augusta-img {
+        width: 500px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .rua-augusta-img {
+        width: 300px;
+        height: 220px;
+    }
+}

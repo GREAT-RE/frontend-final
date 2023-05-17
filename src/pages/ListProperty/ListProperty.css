@@ -1,0 +1,21 @@
+    .contactLogo {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .fieldset-property {
+      display: flex;
+      align-items: center;
+      margin: 10px 5px;
+      border-radius: 10px;
+      height: auto;
+      width: auto;
+      box-shadow: 6px 3px 8px #0000002d;
+    }
+
+    .property-form {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+      
+    }

@@ -1,0 +1,82 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bike-img {
+  width: 1450px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.photo-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.text-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  
+.textP {
+    color: #FCB434;
+    line-height: 2;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,4000);
+  }
+
+  .propertyButton {
+    display:flex;
+    justify-content: center;
+    margin-top: 100px;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 60px;
+  }
+
+
+
+  .propertyButton div {
+    font-size: 1.5rem;
+    padding: 10px 150px;
+    background-color: #FCB434;
+    color:  #3C4464;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.propertyButton div:hover {
+  background-color: #3C4464;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: "none";
+}
+
+@media screen and (max-width:768px) {
+    .textP {
+        font-size: 30px;
+    }
+
+    .bike-img {
+      width: 95%;
+      height: 100%;
+      margin:5%;
+    }
+}
+@media screen and (max-width:500px){
+  .bike-img{
+    width: 100%;
+  }
+}

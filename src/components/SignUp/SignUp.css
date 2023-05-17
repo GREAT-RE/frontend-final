@@ -1,0 +1,94 @@
+.fieldset-signup {
+  display: grid;
+  align-items: center;
+  margin: 25px;
+  border-radius: 10px;
+  height: auto;
+  width: auto;
+  box-shadow: 6px 3px 8px #0000002d;
+}
+
+.signup-form {
+  display: grid;
+  justify-content: center;
+}
+
+.signup-form .input-forms {
+  width: auto;
+}
+
+.checkbox-signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.checkbox-label,
+.checkbox-label2 {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-label a {
+  color: #3C4464;
+  text-decoration: none;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+.terms-link,
+.privacy-link {
+  display: inline;
+}
+
+.have-account {
+  display: flex;
+  justify-content: center;
+}
+
+.signASK {
+  color: #3C4464;
+}
+
+.signASK:hover {
+  text-decoration: underline;
+}
+
+
+.checkbox-all {
+  display: grid;
+  margin-bottom: 10px;
+  margin-top: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
+  gap: 20px;
+  justify-content: center;
+  width: 80%;
+  line-height: 1.5;
+}
+
+.checkbox-text,
+.checkbox-text2 {
+  margin-left: 10px;
+}
+
+@media screen and (max-width:768px) {
+
+  .checkbox-text,
+  .checkbox-text2 {
+    font-size: 16px;
+  }
+
+  .checkbox-signup-container p {
+    font-size: 16px;
+  }
+
+  .checkbox-all {
+    width: 70%;
+  }
+}

@@ -1,0 +1,38 @@
+.slick-slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin:auto;
+}
+
+.carouselImage {
+  max-width: 100%;
+  margin: auto;
+}
+.homeCarousel{
+  width: 80%;
+}
+.carouselText{
+  font-size: 35px;
+  text-align: center;
+  color:#FCB434;
+  text-shadow: 1px 1px 2px rgba(0,0,0,4000);
+}
+.slick-prev:before,
+.slick-next:before {
+color: #3C4464;
+}
+
+@media (max-width: 800px){
+  .carouselText{
+    font-size: 20px;
+  }
+  .slick-slider {
+      width: 90%;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+      display: none;
+}
+}

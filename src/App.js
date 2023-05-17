@@ -1,11 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import ContentPage from './pages/ContentPage/ContentPage';
+import Navbar from './components/Navbar/Navbar';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Greater</h1>
-    </div>
+      <div>
+        <Navbar/>
+        <ContentPage/>
+       
+      </div>
   );
 }
 

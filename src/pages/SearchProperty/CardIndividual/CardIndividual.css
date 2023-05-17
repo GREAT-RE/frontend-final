@@ -1,0 +1,155 @@
+.cardI-all {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.card-left {
+    margin-top: 50px;
+}
+
+.card-right {
+    padding: 20px;
+    margin-top: 200px;
+    border: 1px solid #3C4464;
+    width: 30%;
+    height: 20%;
+    display: grid;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 100px;
+}
+
+.cardI-image {
+    width: 700px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-listing-description {
+  width: 90%;
+  line-height: 1.5;
+}
+
+.cardI-button {
+    display:flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .cardI-button button {
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    background-color: #3C4464;
+    color:  #FCB434;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .cardI-button button:hover {
+    background-color: #3C4464;
+    cursor: pointer;
+  }
+
+  .cardI-price {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+  }
+
+  .cardI-back-button {
+    display:flex;
+    justify-content:left;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    margin-left: 390px;
+  }
+  
+  .cardI-back-button button {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: #3C4464;
+    color:  #FCB434;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .cardI-back-button button:hover {
+    background-color: #3C4464;
+    cursor: pointer;
+  }
+
+  @media screen and (max-width:1025px) {
+
+    .cardI-image{
+      width: 400px;
+      height: 250px;
+    }
+
+    .card-listing-description {
+      width: 100%;
+    }
+
+    .card-right {
+      width: 15%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 200px;
+      height: 200px;
+      padding: 10px;
+      margin-right: 50px;
+    }
+
+    .cardI-price-text,
+    .cardI-reviews{
+      font-size: 12px;
+    }
+
+    .cardI-button button {
+      padding:5px 10px;
+      font-size: 22px;
+    }
+
+    .cardI-all {
+      width: 80%;
+    }
+
+    .card-left {
+      width: 50%;
+    }
+
+  }
+  @media screen and (max-width:768px) {
+
+    .cardI-image{
+      width: 300px;
+      height: 200px;
+    }
+
+    .card-left {
+      margin-left: 0px;
+      width: 50%;
+    }
+
+    .cardI-title {
+      font-size: 26px;
+    }
+
+    .cardI-all {
+      width: 80%;
+    }
+
+    .card-listing-description {
+      width: 150%;
+    }
+  }

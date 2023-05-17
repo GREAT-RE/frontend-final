@@ -1,0 +1,311 @@
+.MuiFormGroup-root {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+}
+.filter-title {
+  /* font-family: "Source Sans Pro"; */
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  color: #222721;
+}
+
+.calendars-container {
+  height: 46.5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  border: 1px solid #222721;
+}
+
+.arrow-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-datepicker__input-container input {
+  display: inline-block;
+  height: 45px;
+   width: 40%;
+  border: 1px solid rgba(165, 183, 187, 0);
+  border-radius: 2px;
+  margin-top: 0px;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  background-repeat: no-repeat;
+  background-size: 18px, 20px;
+  background-position-x: 106px;
+  background-position-y: 11px;
+  padding: 0 15px;
+}
+
+.react-datepicker-popper[data-placement^=bottom] .react-datepicker__triangle::after {
+  border-bottom-color: #E1F4F2 !important;
+  color: #222721 !important;
+
+}
+
+.react-datepicker, .react-datepicker__header, .react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+  border-radius: 0 !important;
+}
+
+.react-datepicker__header {
+  background-color: #E1F4F2 !important;
+  color: #222721 !important;
+}
+
+.react-datepicker__current-month, .react-datepicker__year-read-view--selected-year, .react-datepicker__day-name {
+  color: #222721 !important;
+}
+
+.with-calendar{
+  background-color: #E1F4F2 ;
+
+}
+
+.without-calendar{
+  /* background-color: #E1F4F2 ; */
+}
+
+.moveInMoveOut{
+  height: 40px;
+  text-align: left;
+  border: 2px solid black;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #E1F4F2 ;
+
+}
+.searchOrientation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.extrasCheckbox{
+  background-color: white;
+}
+.extrasCheckbox form {
+  width: 100%;
+}
+.extrasCheckboxButton{
+  background-color: white;
+}
+.searchPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.feelHome {
+  width: 1450px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.optionsMenu {
+  background-color: white;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-top: -14%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+.leftColumn{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#roomType{
+  height: 40px;
+}
+.customSelect {
+  position: relative;
+  width: 100%;
+  height: 40px;
+}
+
+.customSelect select {
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: transparent;
+  color: black;
+  padding-left: 40px;
+  margin: 0px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.customSelect::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url('../../assets/studentLogo.png');
+  background-size: cover;
+}
+.customSelect::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2.5px);
+  right: 10px;
+  border-width: 5px 5px 0 5px;
+  border-style: solid;
+  border-color: #FCB434 transparent transparent transparent;
+  pointer-events: none;
+}
+
+.menuRow {
+  display: flex;
+  height: 40px;
+  gap: 10px;
+  padding: 15px;
+}
+
+#roomType {
+  text-align: left;
+  border: 2px solid black;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.popular-text {
+  color:  #3C4464;
+}
+
+.popular-container {
+  display: flex;
+  justify-content:  center;
+  margin-top: 20px;
+}
+
+.popular-card-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.popular-card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: inline;
+  background-color: rgb(238, 235, 235);
+  padding: 10px;
+  border-radius: 10px;
+  width: 20%;
+}
+
+.popular-all-cards {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-size: 18px;
+  color:  #3C4464;
+}
+
+.card-text {
+  color:  #3C4464;
+}
+
+.card-price {
+  color: red;
+}
+
+.popular-button {
+  display:flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.popular-button button {
+  font-size: 1.5rem;
+  padding: 10px 200px;
+  background-color: #FCB434;
+  color:  #3C4464;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.popular-button button:hover {
+  background-color: #FCA434;
+  cursor: pointer;
+}
+
+.price-range-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.popular-div-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+  .feelHome {
+    width: 85%;
+  }}
+
+  @media screen and (max-width: 768px) {
+
+    .menuRow {
+      display:list-item;
+      list-style: none;
+      height: 100px;
+      margin-top: -150px;
+      width: 150px;
+      
+    }
+
+    #roomType,
+    #propertyType,
+    #priceChange,
+    #extrasChange {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .optionsMenu {
+      height: 300px;
+      width: 70%;
+    }
+
+    .customSelect {
+      margin-bottom: 100px;
+    }
+  }
