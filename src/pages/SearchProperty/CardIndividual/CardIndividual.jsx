@@ -36,7 +36,7 @@ const CardIndividual = () => {
             .put(`/listing/${singleProperty.id}`, {
               formatted_address: results.data.results[0].formatted_address,
             })
-            .then((response) => console.log(response))
+            .then((response) => (response))
         );
     }
   };
@@ -57,7 +57,7 @@ const CardIndividual = () => {
               .put(`/listing/${response.data[0].id}`, {
                 formatted_address: results.data.results[0].formatted_address,
               })
-              .then((response) => console.log(response));
+              .then((response) => (response));
           });
       })
       .catch((error) => {
@@ -91,7 +91,7 @@ const CardIndividual = () => {
   let extraImageArray = [];
   const getAmenities = () => {
     if (amenities) {
-      console.log("object");
+      // console.log("object");
       const amenitiesArray = amenities
         ? amenities
             .split(",")
