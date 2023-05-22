@@ -109,10 +109,10 @@ const CardIndividual = () => {
         .filter((amenity) => amenity !== null);
       setAmenitiesDisplay(extraImageArray);
     } else {
-      console.log("THING");
+      // console.log("THING");
     }
   };
-  console.log(extraImageArray);
+  // console.log(extraImageArray);
 
   useEffect(() => {
     getSingleProperty();

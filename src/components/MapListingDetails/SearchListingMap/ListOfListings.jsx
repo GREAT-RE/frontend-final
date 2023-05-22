@@ -19,7 +19,7 @@ const ListOfListings = ({ cards }) => {
             const asArray = Object.entries(card).filter(
               ([key, value]) => value === minNumber
             );
-            return <ListingCard card={card} asArray={asArray} />;
+            return <ListingCard key={card.id} card={card} asArray={asArray} />;
           })
         : null}
     </>

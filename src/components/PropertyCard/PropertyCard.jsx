@@ -171,14 +171,14 @@ const PropertyCard = ({ listing, minNumber }) => {
         
               {
                   
-                  universities.filter((university, index) => index+1 === Number(universitiesSelected) ).map(university => (
-                    <>
+                  universities.filter((university, index) => index+1 === Number(universitiesSelected) ).map((university,index) => (
+                    <div key={index}>
                     Selected:
                     <p className="card-universities-distance" key={university.id}>
                       <HiLocationMarker />
                     {university.name} is {(listing[`distance_${universitiesSelected}`]).toFixed(2)} km's away
                     </p>
-                    </>
+                    </div>
                   ))
               }
             </>

@@ -26,6 +26,7 @@ export const ListingsContextProvider = ({ children }) => {
     api
       .get("/listing/universities")
       .then((response) => {
+        // console.log(response.data)
         setUniversities(response.data);
       })
       .catch((error) => {
